@@ -1,0 +1,37 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Get Service",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.goschedule.io/store/appointmentstore/"
+    }
+  ],
+  "paths": {
+    "": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-Get-Service"
+      },
+      "parameters": []
+    },
+    "/id": {
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "X-API-KEY": {
+        "name": "API Key",
+        "type": "apiKey",
+        "in": "header",
+        "description": "Authentication request token"
+      }
+    }
+  }
+}

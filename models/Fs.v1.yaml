@@ -1,6 +1,0 @@
-title: Fs
-type: object
-properties:
-  id:
-    type: string
-description: ''
