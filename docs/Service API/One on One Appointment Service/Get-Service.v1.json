@@ -182,6 +182,17 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
           }
         },
         "description": "Create a new 1:1 Appointment Service for a specified organization by providing the corresponding service details using this endpoint.",
