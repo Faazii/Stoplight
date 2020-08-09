@@ -1,3 +1,0 @@
-# 1:1 Appointment-Service
-
-The beginning of an awesome article...
