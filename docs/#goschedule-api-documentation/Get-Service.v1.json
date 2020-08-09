@@ -7,11 +7,11 @@
   },
   "servers": [
     {
-      "url": "https://api.goschedule.io/store/appointmentstore/"
+      "url": "https://api.goschedule.io/store/appointmentstore"
     }
   ],
   "paths": {
-    "{id}": {
+    "/{id}": {
       "parameters": [
         {
           "schema": {
@@ -124,6 +124,26 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "Unauthorized": {
+                    "value": {
+                      "status": 401,
+                      "message": "authentication needed",
+                      "data": [],
+                      "code": 1000
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "description": "Collect the service’s complete details for a specified organization using the corresponding service ID through this endpoint.",
@@ -147,6 +167,93 @@
             "required": true
           }
         ]
+      }
+    },
+    "/create": {
+      "parameters": [],
+      "post": {
+        "summary": "Create A New Service",
+        "operationId": "Create Service",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Create a new 1:1 Appointment Service for a specified organization by providing the corresponding service details using this endpoint.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "header",
+            "name": "X-ORGANIZATION-ID ",
+            "description": "Is the unique Organizational Number",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "X-API-KEY",
+            "description": "Authentication request token",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              },
+              "examples": {
+                "Request": {
+                  "value": {
+                    "service_name": "Startup Class for Bootstrap Founders - part - III",
+                    "service_description": "Good Service description",
+                    "is_private": 0,
+                    "service_type": "one_on_one_appointment_entity",
+                    "trainer_id": 1,
+                    "cancelation_policy": 1,
+                    "refund_policy": 2,
+                    "refund_type": 1,
+                    "refund_amount_or_percentage": 0,
+                    "service_duration_hour": 5,
+                    "service_duration_minutes": 30,
+                    "Appointment_img": "https://scontent-maa2-1.xx.159513457_o.jpg?_nc_cat=101",
+                    "pricing": 450,
+                    "service_location_address": "171, Startup Hub Office, SFO",
+                    "booking_closes": 1,
+                    "reschedule_policy": 1
+                  }
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "example-1": {
+                  "value": {}
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "Request": {
+                  "value": {}
+                }
+              }
+            }
+          },
+          "description": ""
+        }
       }
     }
   },
