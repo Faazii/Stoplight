@@ -1,8 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Get Service",
-    "version": "1.0"
+    "title": "1:1 Appointment Service:",
+    "version": "1.0",
+    "description": ""
   },
   "servers": [
     {
@@ -10,28 +11,147 @@
     }
   ],
   "paths": {
-    "": {
+    "{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "number"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
       "get": {
-        "summary": "Your GET endpoint",
-        "tags": [],
-        "responses": {},
-        "operationId": "get-Get-Service"
-      },
-      "parameters": []
-    },
-    "/id": {
-      "parameters": []
+        "summary": "Get Service",
+        "operationId": "get-:services",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "status": 200,
+                      "message": "processed successfully",
+                      "data": [
+                        {
+                          "service_id": 551,
+                          "org_id": 201,
+                          "service_name": "Customer Demo Session",
+                          "service_description": "<p>Customer Demo Session with Product Experts and Handling</p>",
+                          "is_private": 0,
+                          "service_type": "one_on_one_appointment_entity",
+                          "trainer_id": 18,
+                          "booking_policy": 1,
+                          "cancelation_policy": 1,
+                          "refund_policy": 3,
+                          "refund_type": null,
+                          "refund_amount_or_percentage": null,
+                          "is_enabled": 1,
+                          "reschedule_policy": 1,
+                          "booking_close": 1,
+                          "appmt_appointment_service_entity": {
+                            "service_id": 551,
+                            "id": 523,
+                            "service_duration_hour": 1,
+                            "service_duration_minutes": 30,
+                            "appointment_img": "",
+                            "pricing": "20.00000",
+                            "service_location_type": 0,
+                            "service_location_address": "NA",
+                            "service_location_address2": null,
+                            "service_location_city": null,
+                            "service_location_state": null,
+                            "service_location_pincode": null
+                          },
+                          "StaffMapping": [
+                            {
+                              "id": 733,
+                              "staff_id": 253,
+                              "service_id": 551,
+                              "created_time": "2020-06-15T00:12:22.000Z",
+                              "appmt_user": {
+                                "first_name": "Shiva",
+                                "create_time": "2019-12-28T05:33:10.000Z",
+                                "id": 253,
+                                "is_verified": "1",
+                                "last_name": "Guru",
+                                "is_active": "0",
+                                "is_partner_user": 0
+                              }
+                            },
+                            {
+                              "id": 734,
+                              "staff_id": 31,
+                              "service_id": 551,
+                              "created_time": "2020-06-15T00:12:22.000Z",
+                              "appmt_user": {
+                                "first_name": "Mothi",
+                                "create_time": "2019-06-21T20:10:32.000Z",
+                                "id": 31,
+                                "is_verified": "1",
+                                "last_name": "Venkatesh",
+                                "is_active": "0",
+                                "is_partner_user": 0
+                              }
+                            },
+                            {
+                              "id": 735,
+                              "staff_id": 259,
+                              "service_id": 551,
+                              "created_time": "2020-06-15T00:12:22.000Z",
+                              "appmt_user": {
+                                "first_name": "Shiva",
+                                "create_time": "2020-01-01T05:09:36.000Z",
+                                "id": 259,
+                                "is_verified": "1",
+                                "last_name": "surya",
+                                "is_active": "0",
+                                "is_partner_user": 0
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "code": 29
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Collect the service’s complete details for a specified organization using the corresponding service ID through this endpoint.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "header",
+            "name": "X-ORGANIZATION-ID ",
+            "description": "Is the unique Organizational Number",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "number"
+            },
+            "in": "header",
+            "name": "X-API-KEY",
+            "description": "Authentication request token",
+            "required": true
+          }
+        ]
+      }
     }
   },
   "components": {
     "schemas": {},
-    "securitySchemes": {
-      "X-API-KEY": {
-        "name": "API Key",
-        "type": "apiKey",
-        "in": "header",
-        "description": "Authentication request token"
-      }
-    }
+    "securitySchemes": {}
   }
 }
