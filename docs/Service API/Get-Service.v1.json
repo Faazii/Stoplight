@@ -1,18 +1,14 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "1:1 Appointment Service:",
+    "title": "1:1 Appointment Service",
     "version": "1.0",
     "description": ""
   },
   "servers": [
     {
-      "url": "https://api.goschedule.io/store/appointmentstore",
-      "description": "Get And Create Service"
-    },
-    {
-      "url": "https://api.goschedule.io/store/service",
-      "description": "Service Status"
+      "url": "https://api.goschedule.io/",
+      "description": "Base URL"
     }
   ],
   "paths": {
