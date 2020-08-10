@@ -170,7 +170,7 @@
         ]
       }
     },
-    "/create": {
+    "create": {
       "parameters": [],
       "post": {
         "summary": "Create A New Service",
