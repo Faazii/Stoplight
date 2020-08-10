@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/{id}": {
+    "store/appointmentstore/{id}": {
       "parameters": [
         {
           "schema": {
@@ -170,7 +170,7 @@
         ]
       }
     },
-    "create": {
+    "store/appointmentstore/create": {
       "parameters": [],
       "post": {
         "summary": "Create A New Service",
