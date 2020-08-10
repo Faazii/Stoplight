@@ -3,11 +3,14 @@
   "info": {
     "title": "1:1 Appointment Service",
     "version": "1.0",
-    "description": ""
+    "description": "its one",
+    "contact": {
+      "name": "Shiva"
+    }
   },
   "servers": [
     {
-      "url": "https://api.goschedule.io/",
+      "url": "https://api.goschedule.io",
       "description": "Base URL"
     }
   ],
@@ -25,7 +28,7 @@
       ],
       "get": {
         "summary": "Get Service",
-        "operationId": "get-:services",
+        "operationId": "serviceid",
         "responses": {
           "200": {
             "description": "OK",
@@ -174,7 +177,7 @@
       "parameters": [],
       "post": {
         "summary": "Create A New Service",
-        "operationId": "Create Service",
+        "operationId": "id",
         "responses": {
           "200": {
             "description": "OK"
