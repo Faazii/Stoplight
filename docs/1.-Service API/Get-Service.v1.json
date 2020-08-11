@@ -170,6 +170,9 @@
             "description": "Authentication request token",
             "required": true
           }
+        ],
+        "tags": [
+          "Store"
         ]
       }
     },
@@ -257,12 +260,20 @@
             }
           },
           "description": ""
-        }
+        },
+        "tags": [
+          "Store"
+        ]
       }
     }
   },
   "components": {
     "schemas": {},
     "securitySchemes": {}
-  }
+  },
+  "tags": [
+    {
+      "name": "Store"
+    }
+  ]
 }
