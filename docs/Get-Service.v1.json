@@ -11,7 +11,7 @@
   "servers": [
     {
       "url": "https://api.goschedule.io",
-      "description": "Base URL"
+      "description": "Production"
     }
   ],
   "paths": {
@@ -269,11 +269,23 @@
   },
   "components": {
     "schemas": {},
-    "securitySchemes": {}
+    "securitySchemes": {
+      "X-API-KEY": {
+        "name": "API Key",
+        "type": "apiKey",
+        "in": "header",
+        "description": "API Desc"
+      }
+    }
   },
   "tags": [
     {
       "name": "Store"
+    }
+  ],
+  "security": [
+    {
+      "X-API-KEY": []
     }
   ]
 }
