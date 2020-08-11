@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "1:1 Appointment Service",
+    "title": "One-On-One Appointment Service",
     "version": "1.0",
-    "description": "its one",
+    "description": "# One-On-One Appointment-Service\n\n### One-On-One Appointment service is usually for a single attendee per time slot. It facilitates your clients to quickly make their reservations directly from your website based on their preferred time slot. One-on-One booking is primarily used by interviewers, therapists, personal trainers, pet care professionals, government and embassies, and all other individual appointment-based businesses. \n### With GoSchedule’s 1:1 Appointment Service API, you will be able to get, define your service, add your location and duration of the appointment, and associate it with cost and staff members.\n",
     "contact": {
       "name": "Shiva"
     }
